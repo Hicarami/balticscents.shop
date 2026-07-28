@@ -127,7 +127,7 @@ function HomePage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-onyx/90 via-onyx/20 to-transparent" />
               <div className="absolute inset-0 flex flex-col justify-end p-8">
-                <h3 className="font-display text-3xl mb-4">{g === "Men" ? "Pour Homme" : g === "Women" ? "Pour Femme" : "Unisex"}</h3>
+                <h3 className="font-display text-3xl mb-4">{g === "Vīriešu" ? "Pour Homme" : g === "Sieviešu" ? "Pour Femme" : "Unisex"}</h3>
                 <span className="text-[10px] tracking-[0.25em] uppercase gold-underline w-fit">Shop {g}</span>
               </div>
             </Link>
