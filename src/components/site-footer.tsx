@@ -29,7 +29,6 @@ export function SiteFooter() {
           <div>
             <ul className="space-y-4 text-xs text-foreground/50 font-light">
               <li><Link to="/shop" className="hover:text-gold transition-colors">Visas Smaržas</Link></li>
-              <li><Link to="/collections" className="hover:text-gold transition-colors">Kolekcija</Link></li>
               <li><Link to="/shop" className="hover:text-gold transition-colors">Visvairāk pirktie</Link></li>
               <li><Link to="/shop" className="hover:text-gold transition-colors">Jaunumi</Link></li>
             </ul>
@@ -37,7 +36,6 @@ export function SiteFooter() {
           <div>
             <h4 className="text-[10px] tracking-[0.2em] uppercase text-foreground mb-6">Pakalpojumi</h4>
             <ul className="space-y-4 text-xs text-foreground/50 font-light">
-              <li><Link to="/faq" className="hover:text-gold transition-colors">FAQ</Link></li>
               <li><Link to="/contact" className="hover:text-gold transition-colors">Kontakti</Link></li>
               <li><Link to="/about" className="hover:text-gold transition-colors">Par mums</Link></li>
               <li><Link to="/wishlist" className="hover:text-gold transition-colors">Vēlmju saraksts</Link></li>
@@ -48,7 +46,6 @@ export function SiteFooter() {
             <ul className="space-y-4 text-xs text-foreground/50 font-light">
               <li className="flex items-start gap-2"><MapPin className="h-3.5 w-3.5 mt-0.5 shrink-0 text-gold" /> Rīga, Latvia</li>
               <li className="flex items-start gap-2"><Phone className="h-3.5 w-3.5 mt-0.5 shrink-0 text-gold" /> +371 230 405</li>
-              <li className="flex items-start gap-2"><Mail className="h-3.5 w-3.5 mt-0.5 shrink-0 text-gold" /> moross.lv</li>
             </ul>
           </div>
         </div>

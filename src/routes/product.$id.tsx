@@ -14,11 +14,11 @@ export const Route = createFileRoute("/product/$id")({
     return { product };
   },
   head: ({ loaderData }) => {
-    if (!loaderData) return { meta: [{ title: "Not found — Noir Essence" }] };
+    if (!loaderData) return { meta: [{ title: "Nav atrasts — Moross" }] };
     const { product } = loaderData;
     return {
       meta: [
-        { title: `${product.name} — Noir Essence` },
+        { title: `${product.name} — Moross` },
         { name: "description", content: product.description },
         { property: "og:title", content: `${product.name} — Noir Essence` },
         { property: "og:description", content: product.description },
@@ -30,9 +30,9 @@ export const Route = createFileRoute("/product/$id")({
   component: ProductPage,
   notFoundComponent: () => (
     <div className="mx-auto max-w-3xl px-6 py-32 text-center">
-      <h1 className="font-display text-5xl mb-4">Fragrance not found</h1>
+      <h1 className="font-display text-5xl mb-4">Aromāts nav atrasts</h1>
       <Link to="/shop" className="text-gold gold-underline text-sm tracking-[0.25em] uppercase">
-        Return to shop
+        Atgriezties veikalā
       </Link>
     </div>
   ),
@@ -96,7 +96,7 @@ function ProductPage() {
             <div className="flex items-baseline gap-4 mb-8">
               <span className="font-display text-4xl text-gold">${priceForSize(product.price, size)}</span>
               <span className={cn("text-[10px] tracking-[0.2em] uppercase inline-flex items-center gap-1.5", product.stock > 0 ? "text-emerald-400" : "text-destructive")}>
-                {product.stock > 0 ? <><Check className="h-3 w-3" /> In stock · {product.stock} left</> : "Sold out"}
+                {product.stock > 0 ? <><Check className="h-3 w-3" /> Ir noliktavā · {product.stock} palika</> : "Sold out"}
               </span>
             </div>
 
@@ -140,7 +140,7 @@ function ProductPage() {
                   }}
                   className="flex-1 bg-gold hover:bg-gold-light text-primary-foreground py-4 text-[10px] tracking-[0.25em] uppercase font-bold transition-colors"
                 >
-                  Add to Cart
+                  Pievienot grozam
                 </button>
                 <button
                   onClick={() => toggleWishlist(product.id)}
@@ -157,7 +157,7 @@ function ProductPage() {
 
             {/* Notes */}
             <div className="border-t border-border pt-8 mb-8">
-              <h3 className="font-display text-2xl mb-8 italic">Fragrance Notes</h3>
+              <h3 className="font-display text-2xl mb-8 italic">Aromāta notis</h3>
               <div className="space-y-6">
                 {[
                   { label: "Top Notes", items: product.notes.top, n: "01" },
@@ -174,20 +174,6 @@ function ProductPage() {
                 ))}
               </div>
             </div>
-
-            {/* Perks */}
-            <div className="grid grid-cols-3 gap-4 border-t border-border pt-8">
-              {[
-                { icon: Truck, t: "Free shipping over $150" },
-                { icon: RefreshCw, t: "30-day returns" },
-                { icon: ShieldCheck, t: "Authenticity assured" },
-              ].map((p, i) => (
-                <div key={i} className="flex flex-col items-center text-center gap-2">
-                  <p.icon className="h-5 w-5 text-gold" />
-                  <span className="text-[10px] tracking-[0.15em] uppercase text-foreground/60">{p.t}</span>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </div>
@@ -197,8 +183,8 @@ function ProductPage() {
         <section className="bg-charcoal/40 py-24 px-6 mt-24">
           <div className="mx-auto max-w-7xl">
             <div className="mb-12">
-              <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-3">You Might Also Like</p>
-              <h2 className="font-display text-3xl md:text-4xl">Related Fragrances</h2>
+              <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-3">Tev arī patiks</p>
+              <h2 className="font-display text-3xl md:text-4xl">Līdzīgi aromāti</h2>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {related.map((p) => (

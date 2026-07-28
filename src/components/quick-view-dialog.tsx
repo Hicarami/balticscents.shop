@@ -66,7 +66,7 @@ export function QuickViewDialog() {
                 }}
                 className="flex-1 bg-gold hover:bg-gold-light text-primary-foreground py-4 text-[10px] tracking-[0.25em] uppercase font-bold transition-colors"
               >
-                Add to Cart
+                Pievienot grozā
               </button>
               <Link
                 to="/product/$id"
@@ -74,7 +74,7 @@ export function QuickViewDialog() {
                 onClick={() => setQuickView(null)}
                 className="px-6 border border-border grid place-items-center text-[10px] tracking-[0.25em] uppercase hover:border-gold hover:text-gold transition-colors"
               >
-                Details
+                Sīkāka informācija
               </Link>
             </div>
           </div>

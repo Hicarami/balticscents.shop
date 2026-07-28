@@ -22,9 +22,9 @@ function NotFoundComponent() {
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-6">Error 404</p>
-        <h1 className="font-display text-6xl text-foreground">Page not found</h1>
+        <h1 className="font-display text-6xl text-foreground">Lapa nav atrasta</h1>
         <p className="mt-4 text-sm text-foreground/60">
-          The page you seek has drifted into the ether.
+          Meklētā lapa ir izgaisusi ēterā.
         </p>
         <div className="mt-8">
           <Link
@@ -49,9 +49,9 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="font-display text-3xl text-foreground">Something went wrong</h1>
+        <h1 className="font-display text-3xl text-foreground">Kaut kas nogāja greizi</h1>
         <p className="mt-3 text-sm text-foreground/60">
-          Refresh the page or return to the home boutique.
+          Atsvaidziniet lapu vai atgriezieties sākuma veikalā.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-3">
           <button
@@ -61,13 +61,13 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
             }}
             className="bg-gold px-6 py-3 text-[10px] tracking-[0.25em] uppercase font-bold text-primary-foreground hover:bg-gold-light transition-colors"
           >
-            Try again
+            Mēģiniet vēlreiz
           </button>
           <a
             href="/"
             className="border border-border px-6 py-3 text-[10px] tracking-[0.25em] uppercase font-medium hover:border-gold hover:text-gold transition-colors"
           >
-            Go home
+            atpakaļ mājās
           </a>
         </div>
       </div>
@@ -80,17 +80,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Noir Essence — Discover Your Signature Scent" },
+      { title: "Moross" },
       {
         name: "description",
         content:
-          "Noir Essence is a Parisian fragrance atelier crafting rare oud, amber, and citrus perfumes for the discerning individual.",
+          "..",
       },
-      { name: "author", content: "Noir Essence" },
-      { property: "og:title", content: "Noir Essence — Luxury Fragrance Atelier" },
+      { name: "author", content: "Moross" },
+      { property: "og:title", content: "Moross — ekskluzīvu smaržu darbnīca" },
       {
         property: "og:description",
-        content: "Hand-crafted elixirs for those who command presence.",
+        content: "Ar rokām darinātas smaržas tiem, kuri izstaro klātbūtnes spēku.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

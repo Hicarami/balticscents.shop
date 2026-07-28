@@ -7,7 +7,7 @@ import { Send, Truck } from "lucide-react";
 export const Route = createFileRoute("/checkout")({
   head: () => ({
     meta: [
-      { title: "Checkout — Noir Essence" },
+      { title: "Apmaksa" },
       { name: "robots", content: "noindex" },
     ],
   }),
@@ -89,7 +89,7 @@ function CheckoutPage() {
         <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-3">
           Tiešā pieprasījuma noformēšana
         </p>
-        <h1 className="font-display text-5xl">Pabeidziet pasūtījumu</h1>
+        <h1 className="font-display text-5xl">Pasūtījums tiks apstrādāts</h1>
       </div>
 
       <form onSubmit={submit} className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-16">

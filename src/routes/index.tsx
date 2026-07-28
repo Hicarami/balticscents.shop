@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { products, families, genders } from "@/lib/products";
 import { ProductCard } from "@/components/product-card";
 import { ArrowRight, Star } from "lucide-react";
-import heroBottle from "@/assets/hero-bottle.jpg";
+import heroBottle from "@/assets/Obsidian_Velvet.jpg";
 import ingredients from "@/assets/ingredients.jpg";
 import { useShop } from "@/lib/shop-store";
 
@@ -15,8 +15,8 @@ export const Route = createFileRoute("/")({
         content:
           ".",
       },
-      { property: "og:title", content: "Noir Essence — Luxury Fragrance Atelier" },
-      { property: "og:description", content: "Hand-crafted elixirs for those who command presence." },
+      { property: "og:title", content: "Moross" },
+      { property: "og:description", content: "" },
     ],
   }),
   component: HomePage,
@@ -77,12 +77,6 @@ function HomePage() {
               >
                 Smaržu veikals <ArrowRight className="h-3.5 w-3.5" />
               </Link>
-              <Link
-                to="/collections"
-                className="inline-flex items-center gap-3 border border-border hover:border-gold hover:text-gold px-10 py-5 text-[10px] tracking-[0.25em] uppercase font-medium transition-colors"
-              >
-                Apskati kolekcijas
-              </Link>
             </div>
           </div>
         </div>
@@ -133,7 +127,6 @@ function HomePage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-onyx/90 via-onyx/20 to-transparent" />
               <div className="absolute inset-0 flex flex-col justify-end p-8">
-                <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-2">Collection</p>
                 <h3 className="font-display text-3xl mb-4">{g === "Men" ? "Pour Homme" : g === "Women" ? "Pour Femme" : "Unisex"}</h3>
                 <span className="text-[10px] tracking-[0.25em] uppercase gold-underline w-fit">Shop {g}</span>
               </div>
@@ -192,7 +185,7 @@ function HomePage() {
         <section className="py-24 px-6 mx-auto max-w-7xl">
           <div className="mb-10">
             <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-3">Atgriezties uz</p>
-            <h2 className="font-display text-3xl">Nesen skatītiem</h2>
+            <h2 className="font-display text-3xl">Nesen skatītie</h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {recentProducts.map((p) => (

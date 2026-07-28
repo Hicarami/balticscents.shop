@@ -8,9 +8,9 @@ export const Route = createFileRoute("/shop")({
   head: () => ({
     meta: [
       { title: "Smaržas" },
-      { name: "description", content: "Browse the complete Noir Essence fragrance collection. Filter by family, gender, size, and price." },
+      { name: "description", content: "Aplūkojiet pilnu Moross aromātu kolekciju. Filtrējiet pēc aromātu grupas, dzimuma, tilpuma un cenas." },
       { property: "og:title", content: "Smaržu veikals - Moross" },
-      { property: "og:description", content: "Browse the complete Noir Essence fragrance collection." },
+      { property: "og:description", content: "Aplūkojiet pilnu Moross aromātu kolekciju." },
     ],
   }),
   component: ShopPage,
@@ -53,7 +53,7 @@ function ShopPage() {
   const FiltersPanel = (
     <aside className="space-y-8">
       <div>
-        <h4 className="text-[10px] tracking-[0.25em] uppercase text-gold mb-4">Fragrance Family</h4>
+        <h4 className="text-[10px] tracking-[0.25em] uppercase text-gold mb-4">Smaržu grupa</h4>
         <div className="space-y-2">
           {families.map((f) => (
             <label key={f} className="flex items-center gap-3 text-sm cursor-pointer group">
@@ -69,7 +69,7 @@ function ShopPage() {
         </div>
       </div>
       <div>
-        <h4 className="text-[10px] tracking-[0.25em] uppercase text-gold mb-4">Gender</h4>
+        <h4 className="text-[10px] tracking-[0.25em] uppercase text-gold mb-4">Dzimums</h4>
         <div className="space-y-2">
           {genders.map((g) => (
             <label key={g} className="flex items-center gap-3 text-sm cursor-pointer group">
@@ -85,9 +85,9 @@ function ShopPage() {
         </div>
       </div>
       <div>
-        <h4 className="text-[10px] tracking-[0.25em] uppercase text-gold mb-4">Size</h4>
+        <h4 className="text-[10px] tracking-[0.25em] uppercase text-gold mb-4">Izmērs</h4>
         <div className="flex gap-2">
-          {[50, 100, 200].map((s) => (
+          {[50, 100].map((s) => (
             <button
               key={s}
               onClick={() => toggle(setSize, size, s)}
@@ -102,7 +102,7 @@ function ShopPage() {
         </div>
       </div>
       <div>
-        <h4 className="text-[10px] tracking-[0.25em] uppercase text-gold mb-4">Max Price: ${maxPrice}</h4>
+        <h4 className="text-[10px] tracking-[0.25em] uppercase text-gold mb-4">Maksimāla cena: €{maxPrice}</h4>
         <input
           type="range"
           min={100}
@@ -114,10 +114,10 @@ function ShopPage() {
         />
       </div>
       <div>
-        <h4 className="text-[10px] tracking-[0.25em] uppercase text-gold mb-4">Brand</h4>
+        <h4 className="text-[10px] tracking-[0.25em] uppercase text-gold mb-4">Brands</h4>
         <label className="flex items-center gap-3 text-sm cursor-pointer">
           <input type="checkbox" defaultChecked className="accent-gold h-4 w-4" />
-          <span>Noir Essence</span>
+          <span>Moross</span>
         </label>
       </div>
     </aside>
@@ -126,8 +126,8 @@ function ShopPage() {
   return (
     <div className="mx-auto max-w-7xl px-6 py-16">
       <div className="mb-12 text-center">
-        <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-3">The Boutique</p>
-        <h1 className="font-display text-5xl md:text-6xl">All Fragrances</h1>
+        <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-3">Boutique</p>
+        <h1 className="font-display text-5xl md:text-6xl">Visas smaržas</h1>
         <p className="text-foreground/60 text-sm mt-4">{results.length} of {products.length} scents</p>
       </div>
 
@@ -141,7 +141,7 @@ function ShopPage() {
               <input
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search fragrances..."
+                placeholder="Meklēt smaržas..."
                 className="w-full bg-charcoal/40 border border-border pl-11 pr-4 py-3 text-sm focus:outline-none focus:border-gold transition-colors placeholder:text-foreground/30"
               />
             </div>
@@ -150,17 +150,17 @@ function ShopPage() {
               onChange={(e) => setSort(e.target.value as Sort)}
               className="bg-charcoal/40 border border-border py-3 px-4 text-xs tracking-widest uppercase focus:outline-none focus:border-gold"
             >
-              <option value="popularity">Popularity</option>
-              <option value="newest">Newest</option>
-              <option value="price-asc">Price: Low</option>
-              <option value="price-desc">Price: High</option>
-              <option value="rating">Rating</option>
+              <option value="popularity">Populārs</option>
+              <option value="newest">Jaunāks</option>
+              <option value="price-asc">Cena: zemāka</option>
+              <option value="price-desc">Cena: Augstāka</option>
+              <option value="rating">Pēc vērtējuma</option>
             </select>
             <button
               onClick={() => setOpenFilters((o) => !o)}
               className="md:hidden flex items-center gap-2 border border-border px-4 py-3 text-[10px] tracking-[0.2em] uppercase"
             >
-              <SlidersHorizontal className="h-3.5 w-3.5" /> Filters
+              <SlidersHorizontal className="h-3.5 w-3.5" /> Filtrs
             </button>
           </div>
 
@@ -172,8 +172,8 @@ function ShopPage() {
 
           {results.length === 0 ? (
             <div className="py-24 text-center text-foreground/50">
-              <p className="font-display text-2xl mb-2">No fragrances match your search.</p>
-              <p className="text-sm">Try adjusting your filters.</p>
+              <p className="font-display text-2xl mb-2">Neviens aromāts neatbilst jūsu meklējumam..</p>
+              <p className="text-sm">Mēģiniet pielāgot filtrus.</p>
             </div>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -42,12 +42,12 @@ export function ProductCard({ product }: { product: Product }) {
         </div>
         {product.bestSeller && (
           <span className="absolute top-3 left-3 text-[9px] tracking-[0.2em] uppercase bg-gold text-primary-foreground px-2.5 py-1 font-bold">
-            Best Seller
+            Visvairāk pārdotais
           </span>
         )}
         {!product.bestSeller && product.newest && (
           <span className="absolute top-3 left-3 text-[9px] tracking-[0.2em] uppercase bg-foreground text-background px-2.5 py-1 font-bold">
-            New
+            Jauns
           </span>
         )}
         <div className="absolute bottom-0 left-0 w-full p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500 bg-onyx/85 backdrop-blur-md">
@@ -56,7 +56,7 @@ export function ProductCard({ product }: { product: Product }) {
             params={{ id: product.id }}
             className="block w-full py-3.5 text-center border border-gold/50 text-gold text-[10px] tracking-[0.2em] uppercase hover:bg-gold hover:text-primary-foreground transition-colors font-bold"
           >
-            View Product
+            Skatīt produktu
           </Link>
         </div>
       </div>

@@ -8,7 +8,7 @@ export const Route = createFileRoute("/api/send-order")({
         try {
           const apiKey = process.env.RESEND_API_KEY;
           const ownerEmail =
-            process.env.OWNER_EMAIL || "owner@moross.com";
+            process.env.OWNER_EMAIL || "balticscents.shop";
 
           if (!apiKey) {
             return new Response(

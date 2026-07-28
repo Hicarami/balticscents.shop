@@ -1,14 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import ingredients from "@/assets/ingredients.jpg";
-import heroBottle from "@/assets/hero-bottle.jpg";
+import heroBottle from "@/assets/Obsidian_Velvet.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Noir Essence" },
-      { name: "description", content: "Noir Essence is a Parisian atelier dedicated to the art of luxury fragrance. Discover our craft, our perfumers, and our philosophy." },
-      { property: "og:title", content: "About Noir Essence" },
-      { property: "og:description", content: "A Parisian atelier dedicated to the art of luxury fragrance." },
+      { title: "Par mums" },
+      { property: "og:title", content: "Par Moross" },
     ],
   }),
   component: AboutPage,
