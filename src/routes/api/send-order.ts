@@ -7,8 +7,9 @@ export const Route = createFileRoute("/api/send-order")({
       POST: async ({ request }: { request: Request }) => {
         try {
           const apiKey = process.env.RESEND_API_KEY;
+          // Updated: Valid email fallback using your verified domain
           const ownerEmail =
-            process.env.OWNER_EMAIL || "balticscents.shop";
+            process.env.OWNER_EMAIL || "emilsmorozs0@gmail.com";
 
           if (!apiKey) {
             return new Response(
@@ -155,8 +156,9 @@ $${total.toFixed(2)}
 </div>
 `;
 
+          // Updated: Using a sender address on your verified custom domain
           const result = await resend.emails.send({
-            from: "Moross Orders <onboarding@resend.dev>",
+            from: "Baltic Scents Orders <orders@balticscents.shop>",
             to: ownerEmail,
             subject: `New Order - ${customer.firstName} ${customer.lastName}`,
             html: emailHtml,
